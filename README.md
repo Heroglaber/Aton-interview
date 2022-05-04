@@ -5,12 +5,12 @@
 
 Два треда, Sonny и Cher, исполняют в консоли дуэтом хит 1965 года "I Got You Babe" (https://youtu.be/BERd61bDY7k). Каждый тред выводит своем имя,
 двоеточие и слова песни, например так:
-```java
 Cher: They say we're young and we don't know
 We won't find out until we grow
 Необходимо написать программу, в которой треды работают согласованно, так, чтобы строчки, исполняемые в один голос, выводились в консоль в
 правильном порядке. Строчки припева (в 2 голоса, отмечены "Sonny, Cher") должны выводиться каждым тредом, но в любом порядке.
 Весь текст задан структурой:
+```java
 String[][] lyrics = {
 {"Cher", "They say we're young and we don't know \nWe won't find out until we grow"},
 {"Sonny", "Well I don't know if all that's true \n'Cause you got me, and baby I got you"},
