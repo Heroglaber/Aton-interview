@@ -32,7 +32,6 @@ public class Solution {
 
     private static String FIRST_SINGER = "Cher";
     private static String SECOND_SINGER = "Sonny";
-    private static String CHOIR = "Sonny, Cher";
 
     public static void main(String[] args) {
         lyricsQueue = Arrays.stream(lyrics)
@@ -64,9 +63,9 @@ public class Solution {
                             lyricsQueue.remove();
                             String newKey = entry.getKey().replace(singerName, "");
                             //Удаляем из ключа названия потоков. Когда их (имен) не останется - окончательно удаляем строчку (Все потоки её спели)
-                            if(newKey.matches("^\\W\\s$"))
-                                continue;
-                            lyricsQueue.addFirst(new AbstractMap.SimpleEntry(newKey, entry.getValue()));
+                            if(!newKey.matches("^\\W\\s$")) {
+                                lyricsQueue.addFirst(new AbstractMap.SimpleEntry(newKey, entry.getValue()));
+                            }
                             Singer.class.notify();
                             try {
                                 Singer.class.wait();
